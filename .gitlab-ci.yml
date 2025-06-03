@@ -1,0 +1,10 @@
+stages:
+  - test
+
+test_project:
+  stage: test
+  image: mcr.microsoft.com/dotnet/sdk:7.0
+  script:
+    - dotnet restore
+    - dotnet build --no-restore
+    - dotnet test --no-build --verbosity normal
